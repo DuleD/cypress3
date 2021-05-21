@@ -22,13 +22,13 @@ describe('nevalidan login', () => {
 
     it('Login form', () => {
 
-        /*//cy.get('input[id="email"]').type('highhook@gmail.com')
-        //cy.get('input[id="password"]').type('12345678')
-        cy.get('button[class="btn btn-custom"]').click()    //cy.get('button[class="btn btn-custom"]').type('{enter}') pritisne enter umesto sto klikne na dugme
-        cy.wait(2000)
-        cy.reload()
+        cy.get(locators.loginPage.email).type('highhook@gmail.com')
+        cy.get(locators.loginPage.password).type('12345678')
+        cy.get(locators.loginPage.submitBtn).click()    //cy.get('button[class="btn btn-custom"]').type('{enter}') pritisne enter umesto sto klikne na dugme
+        //cy.wait(2000)
+        //cy.reload()
         //cy.get('input[id="email"]').type('highhook@gmail.com')
-        cy.get('input[id="password"]').type('12345678')
+        /*cy.get('input[id="password"]').type('12345678')
         cy.get('button[class="btn btn-custom"]').click()
         cy.wait(2000)
         cy.reload()
@@ -68,11 +68,11 @@ describe('nevalidan login', () => {
         cy.wait(2000)
         cy.reload()*/
 
-        cy.get('input[id="email"]').type('DIREKTORAT@gmail.com')  //email case sensitive
+       /* cy.get('input[id="email"]').type('DIREKTORAT@gmail.com')  //email case sensitive
         cy.get('input[id="password"]').type('d1234567')
         cy.get('button[class="btn btn-custom"]').click()
         cy.wait(2000)
-        cy.reload()
+        cy.reload()*/
 
     })
 

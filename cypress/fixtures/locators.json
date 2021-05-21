@@ -1,5 +1,12 @@
 {
     "navigation" : {
-        "loginButton" : "a[href='/login']"
+        "loginButton" : "a[href='/login']",
+        "logoutButton" : "ul[class='navbar-nav ml-auto mt-2 mt-lg-0'] > li[class='nav-item'] > a[class'nav-link nav-buttons']"
+    },
+
+    "loginPage" : {
+        "email" : "input[id='email']",
+        "password" : "input[id='password']",
+        "submitBtn" :"button[class='btn btn-custom']"
     }
 }
