@@ -113,8 +113,8 @@ describe('negativan register', () => {   //ovde mozemo i beforeEach
         cy.get(locators.registerPage.firstName).type(faker.internet.userName()) //userData.randomName
         cy.get(locators.registerPage.lastName).type(faker.internet.userName())  //userData.randomLastName
         cy.get(locators.registerPage.email).type(faker.internet.email()) //special characters in email
-        cy.get(locators.registerPage.password).type('12345678')
-        cy.get(locators.registerPage.passwordConfirm).type('12345678')
+        cy.get(locators.registerPage.password).type('12345678')  //userData.randomPassword
+        cy.get(locators.registerPage.passwordConfirm).type('12345678') ////userData.randomPassword mozemo isto jer je smesteno u varijablu ali preko faker internet ne bismo mogli jer bi generisao noivu
         cy.get(locators.registerPage.formCheck).check()
         cy.get(locators.registerPage.registerButton).click()
         cy.get(locators.navigation.logoutButton).click()

@@ -1,5 +1,6 @@
 const locators = require('../../fixtures/locators.json')
-const faker = require('faker')
+import {authlogin} from '../../pageObjects/loginPage'
+//const faker = require('faker')
 //SVE MORAMO STAVITI U ODVOJENE ITOVE ZBOG BEFOREEACH
 
 

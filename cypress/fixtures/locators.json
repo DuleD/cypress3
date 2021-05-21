@@ -18,5 +18,11 @@
         "passwordConfirm" : "input[id='password-confirmation']",
         "formCheck" : "input[class='form-check-input']",
         "registerButton" : "button[class='btn btn-custom']"
+    },
+
+    "createGallery" : {
+        "enterCreateGallery" : "a[href='/create']"
     }
+
+    
 }
