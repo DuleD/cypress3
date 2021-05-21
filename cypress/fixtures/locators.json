@@ -8,5 +8,15 @@
         "email" : "input[id='email']",
         "password" : "input[id='password']",
         "submitBtn" :"button[class='btn btn-custom']"
+    },
+
+    "registerPage" : {
+        "firstName" : "input[id='first-name']",
+        "lastName" : "input[id='last-name']",
+        "email" : "input[id='email']",
+        "password" : "input[id='password']",
+        "passwordConfirm" : "input[id='password-confirmation']",
+        "formCheck" : "input[class='form-check-input']",
+        "registerButton" : "button[class='btn btn-custom']"
     }
 }

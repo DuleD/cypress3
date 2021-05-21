@@ -1,11 +1,13 @@
 const locators = require('../../fixtures/locators.json')
+//SVE MORAMO STAVITI U ODVOJENE ITOVE ZBOG BEFOREEACH
 
 
 // PRVO SMO ODRADILI NEVALIDAN TEST (EMAIL BEZ @) pa ovo isto prekopirano dole su validni
 describe('nevalidan login', () => {
     beforeEach(() => {
         cy.visit('/')  //beforeach radi se pre svakog testa i sada nam ne treba cy reload, ali bismo morali sve da podelimo u vise it-ova
-        cy.get(locators.navigation.loginButton).click()                 //cy.get('a[href="/login"]').click()
+        cy.get(locators.navigation.loginButton).click()                //cy.get('a[href="/login"]').click()
+        cy.get(locators.navigation.logoutButton).click()
       })
     /*it('visit gallery app', () => {
         cy.visit('') // ako posle it stavimo it.only onda ce se samo taj test izvrsiti
