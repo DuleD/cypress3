@@ -1,4 +1,5 @@
 const locators = require('../../fixtures/locators.json')
+const faker = require('faker')
 //SVE MORAMO STAVITI U ODVOJENE ITOVE ZBOG BEFOREEACH
 
 
@@ -7,7 +8,7 @@ describe('nevalidan login', () => {
     beforeEach(() => {
         cy.visit('/')  //beforeach radi se pre svakog testa i sada nam ne treba cy reload, ali bismo morali sve da podelimo u vise it-ova
         cy.get(locators.navigation.loginButton).click()                //cy.get('a[href="/login"]').click()
-        cy.get(locators.navigation.logoutButton).click()
+        
       })
     /*it('visit gallery app', () => {
         cy.visit('') // ako posle it stavimo it.only onda ce se samo taj test izvrsiti
@@ -26,7 +27,8 @@ describe('nevalidan login', () => {
 
         cy.get(locators.loginPage.email).type('highhook@gmail.com')
         cy.get(locators.loginPage.password).type('12345678')
-        cy.get(locators.loginPage.submitBtn).click()    //cy.get('button[class="btn btn-custom"]').type('{enter}') pritisne enter umesto sto klikne na dugme
+        cy.get(locators.loginPage.submitBtn).click()
+        cy.get(locators.navigation.logoutButton).click()    //cy.get('button[class="btn btn-custom"]').type('{enter}') pritisne enter umesto sto klikne na dugme
         //cy.wait(2000)
         //cy.reload()
         //cy.get('input[id="email"]').type('highhook@gmail.com')

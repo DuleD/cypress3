@@ -1,7 +1,7 @@
 {
     "navigation" : {
         "loginButton" : "a[href='/login']",
-        "logoutButton" : "ul[class='navbar-nav ml-auto mt-2 mt-lg-0'] > li[class='nav-item'] > a[class'nav-link nav-buttons']"
+        "logoutButton" : ".ml-auto > :nth-child(3) > .nav-link"
     },
 
     "loginPage" : {
