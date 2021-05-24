@@ -7,12 +7,20 @@ class Navigation {
         return cy.get ("a[href='/create']")
     }
 
+    get register () {
+        return cy.get ('a[href="/register"]')
+    }
+
     clickLogin() {
         this.login.click()
     }
 
     clickCreateGallery() {
         this.udjiUCreateGalley.click()
+    }
+
+    clickRegister () {
+        this.register.click()
     }
 }
 
