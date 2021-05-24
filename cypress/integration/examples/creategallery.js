@@ -15,10 +15,17 @@ describe('Logujem se i pravim galeriju', () => {
       })
 
       it('Login form', () => {
-        authLogin.login('highhook@gmail.com', '1234')
-        cy.get('p[class="alert alert-danger"]').should('be.visible')  //Error tekst treba da postane visible
-        cy.get('p[class="alert alert-danger"]').should('have.text', 'Bad Credentials') //Error teskt treba da pise Bad Credentials
-        cy.get('p[class="alert alert-danger"]').should('have.css', 'background-color', 'rgb(248, 215, 218)') //Error tekst ove boje
+        cy.intercept('POST', 'https://gallery-api.vivifyideas.com/api/auth/login', (req) => {
+
+        }).as('validLogin')
+        authLogin.login('highhook@gmail.com', '12345678')
+        //cy.get('p[class="alert alert-danger"]').should('be.visible')  //Error tekst treba da postane visible
+        //cy.get('p[class="alert alert-danger"]').should('have.text', 'Bad Credentials') //Error teskt treba da pise Bad Credentials
+        //cy.get('p[class="alert alert-danger"]').should('have.css', 'background-color', 'rgb(248, 215, 218)') //Error tekst ove boje
+        cy.wait('@validLogin').then((intercept) => {
+          cy.log(JSON.stringify(intercept.response.statusCode))  //samo logovanje da vidimo sta
+          expect(intercept.response.statusCode).to.eql(200)
+        })
       })
 
       /*it('Login form', () => {
