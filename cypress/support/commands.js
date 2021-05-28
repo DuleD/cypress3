@@ -49,3 +49,29 @@ Cypress.Commands.add('logInThroughBackend', () => {  //promenili email i passwor
         window.localStorage.setItem('token', response.access_token)
     })
 })
+
+
+const faker = require('faker')
+var userData = {
+    randomName: faker.name.findName(),
+    randomLastName: faker.name.lastName(),
+    randomEmail: faker.internet.email(),
+    randomPassword: faker.internet.password() + faker.datatype.number(),
+    randomConfirmPassword: faker.internet.password(),
+    randomShortPassword: faker.internet.password(2),
+    randomPasswordOnlyString: faker.datatype.string()
+}
+
+
+Cypress.Commands.add('registerThroughBackend', () => {
+    cy.request('POST', 'https://gallery-api.vivifyideas.com/api/auth/register', {
+            email: userData.randomEmail,
+            first_name: userData.randomName,
+            last_name: userData.randomLastName,
+            password: userData.randomPassword,
+            password_confirmation: userData.randomPassword,
+            terms_and_conditions: true
+        }).its('body').then((response) => {
+            window.localStorage.setItem('token', response.access_token)
+        })
+})

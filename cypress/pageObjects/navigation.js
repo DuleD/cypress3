@@ -11,6 +11,10 @@ class Navigation {
         return cy.get ('a[href="/register"]')
     }
 
+    get logoutAfterRegister () {
+        return cy.get ('a[role="button "]')
+    }
+
     clickLogin() {
         this.login.click()
     }
@@ -21,6 +25,10 @@ class Navigation {
 
     clickRegister () {
         this.register.click()
+    }
+
+    clickLogoutAfterRegister () {
+        this.logoutAfterRegister.click()
     }
 }
 

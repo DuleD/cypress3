@@ -35,6 +35,38 @@ class Registration {
         return cy.get('div:nth-of-type(3) > .alert.alert-danger')
     }
 
+    get errorPassword () {
+        return cy.get('div:nth-of-type(4) > .alert.alert-danger')
+    }
+
+    get errorTermsAndConditions () {
+        return cy.get('div:nth-of-type(6) > .alert.alert-danger')
+    }
+
+    get registerLabels () {
+        return cy.get('label')
+    }
+
+    get registerInputs () {
+        return cy.get('input')
+    }
+
+    get galleryAppButton () {
+        return cy.get('a[class="navbar-brand router-link-active"]')
+    }
+
+    get allGalleriesButton () {
+        return cy.get('a[class="nav-link nav-buttons router-link-active"]')
+    }
+
+    get loginButtonRegisterPage () {
+        return cy.get('a[class="nav-link nav-buttons"]')
+    }
+
+    get registerButtonRegisterPage () {
+        return cy.get('a[class="nav-link nav-buttons router-link-exact-active router-link-active"]')
+    }
+
     registerAccount(ime, prezime, imejl, lozinka, potvrdiLozinku) {
         ime = ime || undefined
         if (ime != undefined) {
